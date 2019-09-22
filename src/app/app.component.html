@@ -1,0 +1,28 @@
+<app-header></app-header>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
+
+<div bsModal #childModal="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-child-name">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-child-name" class="modal-title pull-left">You Have Been Idle!</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="hideChildModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         {{idleState}}
+        <div class="row mrgbtm">
+          <div class="col-md-6">
+              <button type="button" (click)="logout()" class="btn btn-danger">Logout</button>
+          </div>
+          <div class="col-md-6">
+              <button type="button" (click)="stay()" class="btn btn-success">Stay</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
